@@ -10,8 +10,11 @@ import successImage from '@/assets/success.jpg';
 
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [showCursor, setShowCursor] = useState(true);
+  const [line1Text, setLine1Text] = useState('');
+  const [line2Text, setLine2Text] = useState('');
+  const [showCursor1, setShowCursor1] = useState(true);
+  const [showCursor2, setShowCursor2] = useState(false);
+  const [line1Complete, setLine1Complete] = useState(false);
   
   const images = [
     zainabImage,
@@ -22,26 +25,53 @@ const HeroSection = () => {
     successImage
   ];
 
-  const fullText = "Hi there! I'm Zainab Tariq";
+  const line1 = "Hi there!";
+  const line2 = "I'm Zainab Tariq";
 
   useEffect(() => {
+    // Type first line
     let i = 0;
-    const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setDisplayText(fullText.slice(0, i + 1));
+    const typingInterval1 = setInterval(() => {
+      if (i < line1.length) {
+        setLine1Text(line1.slice(0, i + 1));
         i++;
       } else {
-        clearInterval(typingInterval);
+        clearInterval(typingInterval1);
+        setLine1Complete(true);
+        setShowCursor1(false);
+        
+        // Start typing second line after a brief pause
+        setTimeout(() => {
+          setShowCursor2(true);
+          let j = 0;
+          const typingInterval2 = setInterval(() => {
+            if (j < line2.length) {
+              setLine2Text(line2.slice(0, j + 1));
+              j++;
+            } else {
+              clearInterval(typingInterval2);
+            }
+          }, 100);
+        }, 500);
       }
     }, 100);
 
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
+    const cursorInterval1 = setInterval(() => {
+      if (!line1Complete) {
+        setShowCursor1(prev => !prev);
+      }
+    }, 500);
+
+    const cursorInterval2 = setInterval(() => {
+      if (line1Complete) {
+        setShowCursor2(prev => !prev);
+      }
     }, 500);
 
     return () => {
-      clearInterval(typingInterval);
-      clearInterval(cursorInterval);
+      clearInterval(typingInterval1);
+      clearInterval(cursorInterval1);
+      clearInterval(cursorInterval2);
     };
   }, []);
 
@@ -54,7 +84,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-12 bg-gradient-to-br from-background via-warm to-cozy">
+    <section id="about" className="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-background via-warm to-cozy">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         
         {/* Instagram-style Post */}
@@ -123,10 +153,16 @@ const HeroSection = () => {
         {/* Hero Content */}
         <div className="space-y-6 animate-fadeIn">
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground">
-              {displayText}
-              <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
-            </h1>
+            <div className="text-4xl md:text-6xl font-bold text-foreground">
+              <div className="flex items-center">
+                {line1Text}
+                <span className={`${showCursor1 ? 'opacity-100' : 'opacity-0'} transition-opacity ml-1`}>|</span>
+              </div>
+              <div className="flex items-center mt-2">
+                {line2Text}
+                <span className={`${showCursor2 ? 'opacity-100' : 'opacity-0'} transition-opacity ml-1`}>|</span>
+              </div>
+            </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
               I'm a passionate designer and creative problem-solver who loves crafting beautiful, 

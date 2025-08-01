@@ -38,7 +38,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-cozy via-warm to-background">
+    <section id="contact" className="py-20 px-6 bg-gradient-to-br from-cozy via-warm to-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
