@@ -84,7 +84,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-background via-warm to-cozy">
+    <section id="about" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         
         {/* Instagram-style Post */}
@@ -153,7 +153,7 @@ const HeroSection = () => {
         {/* Hero Content */}
         <div className="space-y-6 animate-fadeIn">
           <div className="space-y-4">
-            <div className="text-4xl md:text-6xl font-bold text-foreground">
+            <div className="text-4xl md:text-6xl font-bold text-foreground font-playfair">
               <div className="flex items-center">
                 {line1Text}
                 <span className={`${showCursor1 ? 'opacity-100' : 'opacity-0'} transition-opacity ml-1`}>|</span>

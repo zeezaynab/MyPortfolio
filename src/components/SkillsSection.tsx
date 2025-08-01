@@ -31,7 +31,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6 bg-gradient-to-b from-cozy to-warm">
+    <section id="skills" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
