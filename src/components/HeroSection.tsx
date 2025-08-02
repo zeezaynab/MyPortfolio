@@ -160,7 +160,7 @@ const HeroSection = () => {
               </div>
               <div className="flex items-center mt-2">
                 {line2Text}
-                <span className={`${showCursor2 ? 'opacity-100' : 'opacity-0'} transition-opacity ml-1`}>|</span>
+                <span className={`${showCursor2 ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
               </div>
             </div>
             

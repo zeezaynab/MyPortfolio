@@ -1,31 +1,30 @@
-import { useState } from 'react';
+import { Shield, Terminal, Search, Network, FileText, Code } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const SkillsSection = () => {
-  const [hoveredStack, setHoveredStack] = useState<number | null>(null);
-
-  const skillStacks = [
+  const skillCategories = [
     {
-      title: "Design & Creative",
-      description: "I craft beautiful and intuitive designs that tell stories and solve problems. From concept to completion, I focus on creating meaningful user experiences.",
-      books: [
-        { title: "UI/UX Design", color: "bg-primary" },
-        { title: "Visual Design", color: "bg-accent" },
-        { title: "Branding", color: "bg-warm" },
-        { title: "Typography", color: "bg-chai" },
-        { title: "Color Theory", color: "bg-cozy" },
-        { title: "Prototyping", color: "bg-secondary" },
+      title: "Technical Skills",
+      icon: Code,
+      skills: [
+        { name: "Python", level: "Advanced", color: "bg-primary" },
+        { name: "Java", level: "Intermediate", color: "bg-accent" },
+        { name: "C++", level: "Intermediate", color: "bg-warm" },
+        { name: "PowerShell", level: "Advanced", color: "bg-chai" },
+        { name: "Go", level: "Beginner", color: "bg-cozy" },
+        { name: "Ladder Logic", level: "Intermediate", color: "bg-secondary" },
       ]
     },
     {
-      title: "Technical & Development",
-      description: "I bridge the gap between design and development, ensuring designs come to life exactly as envisioned with clean, efficient code.",
-      books: [
-        { title: "Frontend Dev", color: "bg-primary" },
-        { title: "React & JS", color: "bg-accent" },
-        { title: "CSS & SCSS", color: "bg-warm" },
-        { title: "Responsive", color: "bg-chai" },
-        { title: "Figma Pro", color: "bg-cozy" },
-        { title: "Git & Tools", color: "bg-secondary" },
+      title: "Cybersecurity Specialties",
+      icon: Shield,
+      skills: [
+        { name: "OT Penetration Testing", level: "Advanced", color: "bg-primary" },
+        { name: "Digital Forensics & DFIR", level: "Advanced", color: "bg-accent" },
+        { name: "SOC Development", level: "Intermediate", color: "bg-warm" },
+        { name: "Network Security", level: "Advanced", color: "bg-chai" },
+        { name: "ICS Security", level: "Advanced", color: "bg-cozy" },
+        { name: "Linux Security Tools", level: "Advanced", color: "bg-secondary" },
       ]
     }
   ];
@@ -34,73 +33,52 @@ const SkillsSection = () => {
     <section id="skills" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            What I Offer
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 font-inter">
+            Technical Expertise
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A blend of creativity and technical expertise to bring your ideas to life
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
+            Cybersecurity student specializing in OT security, digital forensics, and penetration testing
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {skillStacks.map((stack, stackIndex) => (
-            <div 
-              key={stackIndex} 
-              className="space-y-8 animate-fadeIn"
-              style={{ animationDelay: `${stackIndex * 0.2}s` }}
-            >
-              
-              {/* Book Stack */}
-              <div className="flex justify-center">
-                <div 
-                  className="relative group cursor-pointer"
-                  onMouseEnter={() => setHoveredStack(stackIndex)}
-                  onMouseLeave={() => setHoveredStack(null)}
-                >
-                  <div className="space-y-1">
-                    {stack.books.map((book, bookIndex) => (
+        <div className="grid md:grid-cols-2 gap-12">
+          {skillCategories.map((category, categoryIndex) => {
+            const IconComponent = category.icon;
+            return (
+              <Card
+                key={categoryIndex}
+                className="relative overflow-hidden rounded-2xl border-0 shadow-lg bg-card/50 backdrop-blur-sm animate-fadeIn"
+                style={{ animationDelay: `${categoryIndex * 0.2}s` }}
+              >
+                <CardContent className="p-8 space-y-6">
+                  {/* Category Header */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground font-inter">
+                      {category.title}
+                    </h3>
+                  </div>
+
+                  {/* Skills Grid */}
+                  <div className="space-y-3">
+                    {category.skills.map((skill, skillIndex) => (
                       <div
-                        key={bookIndex}
-                        className={`
-                          relative h-12 w-64 rounded-md shadow-lg transition-all duration-300 
-                          ${book.color} hover:scale-105 hover:z-10 hover:shadow-xl
-                          ${hoveredStack === stackIndex ? 'animate-float' : ''}
-                        `}
-                        style={{
-                          animationDelay: `${bookIndex * 0.1}s`,
-                          transform: hoveredStack === stackIndex ? `translateX(${bookIndex * 2}px)` : 'none'
-                        }}
+                        key={skillIndex}
+                        className="flex items-center justify-between p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors duration-200"
                       >
-                        {/* Book Spine */}
-                        <div className="absolute inset-y-0 left-0 w-3 bg-black/20 rounded-l-md"></div>
-                        
-                        {/* Book Title */}
-                        <div className="flex items-center justify-center h-full text-white font-semibold text-sm px-4">
-                          {book.title}
-                        </div>
-                        
-                        {/* Book Pages Effect */}
-                        <div className="absolute inset-y-1 right-0 w-1 bg-white/30 rounded-r-sm"></div>
+                        <span className="text-foreground font-medium">{skill.name}</span>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium text-white ${skill.color}`}>
+                          {skill.level}
+                        </span>
                       </div>
                     ))}
                   </div>
-                  
-                  {/* Shadow Base */}
-                  <div className="absolute bottom-0 left-2 right-2 h-2 bg-black/10 rounded-full blur-sm"></div>
-                </div>
-              </div>
-
-              {/* Description */}
-              <div className="text-center space-y-4">
-                <h3 className="text-2xl font-bold text-foreground">
-                  {stack.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
-                  {stack.description}
-                </p>
-              </div>
-            </div>
-          ))}
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

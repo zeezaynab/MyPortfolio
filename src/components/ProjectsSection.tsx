@@ -62,8 +62,8 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            My Projects
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 font-inter">
+            Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A collection of work that showcases my passion for creating meaningful digital experiences

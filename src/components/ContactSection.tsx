@@ -41,8 +41,8 @@ const ContactSection = () => {
     <section id="contact" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Let's Grab Some Chai
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 font-inter">
+            Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to start your next project? Let's chat over a cup of chai and bring your ideas to life!
