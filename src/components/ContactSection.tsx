@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, Mail, MessageSquare, User } from 'lucide-react';
+import { Send, Mail, MessageSquare, User, Linkedin, Github } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -45,84 +45,69 @@ const ContactSection = () => {
             Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your next project? Let's chat over a cup of chai and bring your ideas to life!
+            Ready to start your next cybersecurity project? Let's discuss how we can work together!
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           
-          {/* Chai Animation Side */}
-          <div className="flex justify-center items-center">
-            <div className="relative animate-fadeIn">
+          {/* Contact Info Side */}
+          <div className="flex justify-center items-center animate-fadeIn">
+            <div className="space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground mb-4">
+                  Let's Connect
+                </h3>
+                <p className="text-muted-foreground">
+                  I'm always excited to discuss cybersecurity projects, share insights, or explore collaboration opportunities. Feel free to reach out through any of these channels.
+                </p>
+              </div>
               
-              {/* Kettle */}
-              <div className={`
-                relative transition-all duration-1000 ${isPouring ? 'animate-pour' : 'animate-float'}
-              `}>
-                <svg width="200" height="160" viewBox="0 0 200 160" className="drop-shadow-lg">
-                  {/* Kettle Body */}
-                  <ellipse cx="100" cy="100" rx="60" ry="40" fill="hsl(var(--chai))" className="drop-shadow-md"/>
-                  
-                  {/* Kettle Handle */}
-                  <path 
-                    d="M 40 85 Q 15 85 15 110 Q 15 135 40 135" 
-                    stroke="hsl(var(--chai-foreground))" 
-                    strokeWidth="6" 
-                    fill="none" 
-                    strokeLinecap="round"
-                  />
-                  
-                  {/* Kettle Spout */}
-                  <path 
-                    d="M 160 90 Q 180 85 185 95 Q 190 105 180 110" 
-                    stroke="hsl(var(--chai))" 
-                    strokeWidth="8" 
-                    fill="none" 
-                    strokeLinecap="round"
-                  />
-                  
-                  {/* Steam */}
-                  {isPouring && (
-                    <g className="animate-pulse">
-                      <path d="M 185 105 Q 190 120 185 135" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" opacity="0.6"/>
-                      <path d="M 190 108 Q 195 123 190 138" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" opacity="0.4"/>
-                      <path d="M 195 110 Q 200 125 195 140" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" opacity="0.3"/>
-                    </g>
-                  )}
-                </svg>
+              {/* Contact Methods */}
+              <div className="space-y-4">
+                <a 
+                  href="https://www.linkedin.com/in/zainab-tariq-a26992285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <Linkedin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground">LinkedIn</h4>
+                    <p className="text-sm text-muted-foreground">Professional networking</p>
+                  </div>
+                </a>
+                
+                <a 
+                  href="https://github.com/zeezaynab"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <Github className="w-6 h-6 text-accent" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground">GitHub</h4>
+                    <p className="text-sm text-muted-foreground">View my projects & code</p>
+                  </div>
+                </a>
+                
+                <a 
+                  href="mailto:zaynab.tae12@gmail.com"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-warm/10 flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-warm" />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-foreground">Email</h4>
+                    <p className="text-sm text-muted-foreground">zaynab.tae12@gmail.com</p>
+                  </div>
+                </a>
               </div>
-
-              {/* Chai Cup */}
-              <div className="absolute -bottom-8 -right-12">
-                <svg width="80" height="60" viewBox="0 0 80 60">
-                  {/* Cup Body */}
-                  <ellipse cx="40" cy="45" rx="25" ry="12" fill="hsl(var(--card))"/>
-                  <rect x="15" y="25" width="50" height="20" fill="hsl(var(--card))" rx="2"/>
-                  
-                  {/* Chai Liquid */}
-                  <ellipse cx="40" cy="35" rx="20" ry="8" fill="hsl(var(--primary))" opacity="0.8"/>
-                  
-                  {/* Cup Handle */}
-                  <path 
-                    d="M 65 35 Q 75 35 75 45 Q 75 55 65 55" 
-                    stroke="hsl(var(--muted-foreground))" 
-                    strokeWidth="3" 
-                    fill="none"
-                  />
-                  
-                  {/* Steam from Cup */}
-                  <g className="animate-pulse" opacity="0.6">
-                    <path d="M 35 25 Q 37 15 35 10" stroke="hsl(var(--muted-foreground))" strokeWidth="1" fill="none"/>
-                    <path d="M 40 25 Q 42 15 40 10" stroke="hsl(var(--muted-foreground))" strokeWidth="1" fill="none"/>
-                    <path d="M 45 25 Q 47 15 45 10" stroke="hsl(var(--muted-foreground))" strokeWidth="1" fill="none"/>
-                  </g>
-                </svg>
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -left-8 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 left-8 w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-              <div className="absolute top-8 -right-4 w-2 h-2 bg-warm rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
             </div>
           </div>
 

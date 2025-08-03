@@ -1,8 +1,8 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import SkillsSection from '@/components/SkillsSection';
+import WhatIOffer from '@/components/WhatIOffer';
 import ProjectsSection from '@/components/ProjectsSection';
-import ServicesSection from '@/components/ServicesSection';
+import CertificationsSection from '@/components/CertificationsSection';
 import ContactSection from '@/components/ContactSection';
 
 const Index = () => {
@@ -10,9 +10,9 @@ const Index = () => {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <SkillsSection />
+      <WhatIOffer />
       <ProjectsSection />
-      <ServicesSection />
+      <CertificationsSection />
       <ContactSection />
     </main>
   );

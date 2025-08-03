@@ -112,4 +112,16 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--warm) / 0.3) 50%, hsl(var(--cozy) / 0.2) 100%);
   }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
 }

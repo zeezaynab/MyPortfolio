@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Mail, Github, Linkedin, Coffee } from 'lucide-react';
+import { Menu, X, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -25,9 +25,9 @@ const Navbar = () => {
 
   const navItems = [
     { label: 'About', id: 'about' },
-    { label: 'Skills', id: 'skills' },
+    { label: 'What I Offer', id: 'what-i-offer' },
     { label: 'Projects', id: 'projects' },
-    { label: 'Services', id: 'services' },
+    { label: 'Certifications', id: 'certifications' },
     { label: 'Contact', id: 'contact' },
   ];
 
@@ -44,10 +44,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('about')}>
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Coffee className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-bold text-xl text-foreground">Zainab</span>
+            <span className="font-bold text-xl text-foreground">Zainab Tariq</span>
           </div>
 
           {/* Desktop Navigation */}

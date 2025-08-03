@@ -15,46 +15,49 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "Modern shopping experience with intuitive design",
-      image: "bg-gradient-to-br from-primary to-accent",
-      tech: ["React", "TypeScript", "Tailwind"],
-      color: "from-primary/20 to-accent/20"
+      title: "Zarker",
+      description: "Advanced threat detection system with real-time monitoring capabilities and automated response mechanisms.",
+      image: "/lovable-uploads/workspace-1.jpg",
+      tech: ["Python", "Machine Learning", "Network Analysis"],
+      color: "from-primary/20 to-accent/20",
+      github: "https://github.com/zeezaynab/zarker",
+      live: "#"
     },
     {
-      title: "Wellness App",
-      description: "Mental health and mindfulness companion",
-      image: "bg-gradient-to-br from-warm to-cozy",
-      tech: ["React Native", "Node.js", "MongoDB"],
-      color: "from-warm/20 to-cozy/20"
+      title: "Omnilog",
+      description: "Comprehensive log analysis platform for security incident detection and forensic investigation.",
+      image: "/lovable-uploads/project-1.jpg",
+      tech: ["Java", "ElasticSearch", "Docker"],
+      color: "from-warm/20 to-cozy/20",
+      github: "https://github.com/zeezaynab/omnilog",
+      live: "#"
     },
     {
-      title: "Creative Portfolio",
-      description: "Showcase for digital artists and designers",
-      image: "bg-gradient-to-br from-chai to-secondary",
-      tech: ["Next.js", "Framer Motion", "Sanity"],
-      color: "from-chai/20 to-secondary/20"
+      title: "Phoolbazar",
+      description: "E-commerce security framework with advanced fraud detection and secure payment processing.",
+      image: "/lovable-uploads/brainstorm.jpg",
+      tech: ["React", "Node.js", "Cybersecurity"],
+      color: "from-chai/20 to-secondary/20",
+      github: "https://github.com/zeezaynab/phoolBazar",
+      live: "#"
     },
     {
-      title: "Food Delivery",
-      description: "Seamless ordering experience for local restaurants",
-      image: "bg-gradient-to-br from-accent to-warm",
-      tech: ["Vue.js", "Express", "PostgreSQL"],
-      color: "from-accent/20 to-warm/20"
+      title: "Momo",
+      description: "Mobile security application for threat assessment and vulnerability scanning on Android devices.",
+      image: "/lovable-uploads/reading-corner.jpg",
+      tech: ["Android", "Kotlin", "Security APIs"],
+      color: "from-accent/20 to-warm/20",
+      github: "https://github.com/zeezaynab/momo",
+      live: "#"
     },
     {
-      title: "Learning Platform",
-      description: "Interactive education with gamification",
-      image: "bg-gradient-to-br from-cozy to-primary",
-      tech: ["React", "Django", "WebSockets"],
-      color: "from-cozy/20 to-primary/20"
-    },
-    {
-      title: "Business Dashboard",
-      description: "Analytics and insights for growing companies",
-      image: "bg-gradient-to-br from-secondary to-chai",
-      tech: ["Angular", "D3.js", "Firebase"],
-      color: "from-secondary/20 to-chai/20"
+      title: "SOC Development for OT Systems",
+      description: "Security Operations Center implementation for Operational Technology environments with specialized monitoring.",
+      image: "/lovable-uploads/success.jpg",
+      tech: ["Python", "SIEM", "OT Protocols"],
+      color: "from-cozy/20 to-primary/20",
+      github: "#",
+      live: "#"
     }
   ];
 
@@ -84,8 +87,13 @@ const ProjectsSection = () => {
                   onMouseLeave={() => setHoveredProject(null)}
                 >
                   <CardContent className="p-0">
-                    {/* Project Image/Gradient */}
-                    <div className={`h-48 w-full ${project.image} relative overflow-hidden`}>
+                    {/* Project Image */}
+                    <div className="h-48 w-full relative overflow-hidden">
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
                       {/* Overlay */}
                       <div className={`
                         absolute inset-0 bg-black/20 transition-all duration-300
@@ -108,22 +116,32 @@ const ProjectsSection = () => {
                           absolute inset-0 flex items-center justify-center gap-3 transition-all duration-300
                           ${hoveredProject === index ? 'opacity-100' : 'opacity-0'}
                         `}>
-                          <Button
-                            size="sm"
-                            variant="secondary"
-                            className="rounded-full bg-white/90 hover:bg-white text-foreground"
-                          >
-                            <Eye className="w-4 h-4 mr-2" />
-                            View
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="secondary"
-                            className="rounded-full bg-white/90 hover:bg-white text-foreground"
-                          >
-                            <Github className="w-4 h-4 mr-2" />
-                            Code
-                          </Button>
+                          {project.live !== "#" && (
+                            <Button
+                              size="sm"
+                              variant="secondary"
+                              className="rounded-full bg-white/90 hover:bg-white text-foreground"
+                              asChild
+                            >
+                              <a href={project.live} target="_blank" rel="noopener noreferrer">
+                                <Eye className="w-4 h-4 mr-2" />
+                                View
+                              </a>
+                            </Button>
+                          )}
+                          {project.github !== "#" && (
+                            <Button
+                              size="sm"
+                              variant="secondary"
+                              className="rounded-full bg-white/90 hover:bg-white text-foreground"
+                              asChild
+                            >
+                              <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-4 h-4 mr-2" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
                         </div>
                       </div>
                     </div>
