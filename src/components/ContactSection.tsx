@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
-
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,32 +12,34 @@ const ContactSection = () => {
     message: ''
   });
   const [isPouring, setIsPouring] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsPouring(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       toast({
         title: "Message sent!",
-        description: "Thanks for reaching out! I'll get back to you soon. ☕",
+        description: "Thanks for reaching out! I'll get back to you soon. ☕"
       });
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
       setIsPouring(false);
     }, 2000);
   };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-
-  return (
-    <section id="contact" className="py-20 px-6">
+  return <section id="contact" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
           <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-4">
@@ -59,19 +60,12 @@ const ContactSection = () => {
           <div className="flex justify-center items-center animate-fadeIn">
             <div className="space-y-8">
               <div className="text-center">
-                <p className="text-lg text-foreground">
-                  you can find me @:
-                </p>
+                
               </div>
               
               {/* Contact Methods */}
               <div className="space-y-4">
-                <a 
-                  href="https://www.linkedin.com/in/zainab-tariq-a26992285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors"
-                >
+                <a href="https://www.linkedin.com/in/zainab-tariq-a26992285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <Linkedin className="w-6 h-6 text-primary" />
                   </div>
@@ -81,12 +75,7 @@ const ContactSection = () => {
                   </div>
                 </a>
                 
-                <a 
-                  href="https://github.com/zeezaynab"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors"
-                >
+                <a href="https://github.com/zeezaynab" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                     <Github className="w-6 h-6 text-accent" />
                   </div>
@@ -96,10 +85,7 @@ const ContactSection = () => {
                   </div>
                 </a>
                 
-                <a 
-                  href="mailto:zaynab.tae12@gmail.com"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors"
-                >
+                <a href="mailto:zaynab.tae12@gmail.com" className="flex items-center gap-4 p-4 rounded-2xl bg-card/50 hover:bg-card/80 transition-colors">
                   <div className="w-12 h-12 rounded-xl bg-warm/10 flex items-center justify-center">
                     <Mail className="w-6 h-6 text-warm" />
                   </div>
@@ -113,7 +99,9 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="animate-fadeIn" style={{animationDelay: '0.2s'}}>
+          <div className="animate-fadeIn" style={{
+          animationDelay: '0.2s'
+        }}>
             <Card className="rounded-3xl shadow-xl border-0 bg-card/80 backdrop-blur-sm">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -124,15 +112,7 @@ const ContactSection = () => {
                       <User className="w-4 h-4" />
                       Your Name
                     </label>
-                    <Input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Enter your name"
-                      className="rounded-xl border-0 bg-muted/50 h-12"
-                      required
-                    />
+                    <Input type="text" name="name" value={formData.name} onChange={handleInputChange} placeholder="Enter your name" className="rounded-xl border-0 bg-muted/50 h-12" required />
                   </div>
 
                   {/* Email Field */}
@@ -141,15 +121,7 @@ const ContactSection = () => {
                       <Mail className="w-4 h-4" />
                       Email Address
                     </label>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="your.email@example.com"
-                      className="rounded-xl border-0 bg-muted/50 h-12"
-                      required
-                    />
+                    <Input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="your.email@example.com" className="rounded-xl border-0 bg-muted/50 h-12" required />
                   </div>
 
                   {/* Message Field */}
@@ -158,34 +130,18 @@ const ContactSection = () => {
                       <MessageSquare className="w-4 h-4" />
                       Your Message
                     </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder="Tell me about your project or just say hello!"
-                      className="rounded-xl border-0 bg-muted/50 min-h-32 resize-none"
-                      required
-                    />
+                    <Textarea name="message" value={formData.message} onChange={handleInputChange} placeholder="Tell me about your project or just say hello!" className="rounded-xl border-0 bg-muted/50 min-h-32 resize-none" required />
                   </div>
 
                   {/* Submit Button */}
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={isPouring}
-                    className="w-full rounded-xl h-12 bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    {isPouring ? (
-                      <div className="flex items-center gap-2">
+                  <Button type="submit" size="lg" disabled={isPouring} className="w-full rounded-xl h-12 bg-primary hover:bg-primary/90 text-primary-foreground">
+                    {isPouring ? <div className="flex items-center gap-2">
                         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                         Brewing your message...
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2">
+                      </div> : <div className="flex items-center gap-2">
                         <Send className="w-4 h-4" />
                         Send Message
-                      </div>
-                    )}
+                      </div>}
                   </Button>
                 </form>
               </CardContent>
@@ -200,8 +156,6 @@ const ContactSection = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ContactSection;
