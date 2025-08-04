@@ -59,11 +59,8 @@ const ContactSection = () => {
           <div className="flex justify-center items-center animate-fadeIn">
             <div className="space-y-8">
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground mb-4">
-                  Let's Connect
-                </h3>
-                <p className="text-muted-foreground">
-                  I'm always excited to discuss cybersecurity projects, share insights, or explore collaboration opportunities. Feel free to reach out through any of these channels.
+                <p className="text-lg text-foreground">
+                  you can find me @:
                 </p>
               </div>
               
@@ -165,7 +162,7 @@ const ContactSection = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Tell me about your project or just say hello! ☕"
+                      placeholder="Tell me about your project or just say hello!"
                       className="rounded-xl border-0 bg-muted/50 min-h-32 resize-none"
                       required
                     />

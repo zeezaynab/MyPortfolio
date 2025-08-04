@@ -15,16 +15,8 @@ const HeroSection = () => {
       caption: "I'm an active member of IEEE where I've been teaching cybersecurity courses for over a year, covering fundamentals like network security, threat analysis, and security best practices."
     },
     {
-      src: "/lovable-uploads/89a767be-409f-4616-a6fb-67f3a76ee559.png",
+      src: "/lovable-uploads/f139c941-940d-486b-a60a-dd87eab7e61a.png",
       caption: "I recently completed my internship at NECOP, working with the ICS department where I gained hands-on experience in Industrial Control Systems security and OT SOC development (NDAs have been signed so here's a goofy picture instead :D)"
-    },
-    {
-      src: "/lovable-uploads/19949cf4-9558-4401-95f5-6e2c3acf634e.png",
-      caption: "I'm passionate about cysec content writing and researching cybersecurity topics that matter. My current areas of interests are DFIR and ICS/OT systems."
-    },
-    {
-      src: "/lovable-uploads/cc642c89-23f1-45f8-a3e9-1d5d25f8b579.png",
-      caption: "This was a peek into my world, scroll below for all the professional jazz!"
     }
   ];
 
@@ -115,15 +107,30 @@ const HeroSection = () => {
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-              Passionate about Digital forensics and ICS and OT Systems | cyber security content writing and research
+              Passionate about DFIR,Network Security and ICS/OT Security | Cybersecurity content writer and researcher
             </p>
           </div>
           
           <div className="flex gap-4">
-            <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              size="lg" 
+              className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                projectsSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               View My Work
             </Button>
-            <Button variant="outline" size="lg" className="rounded-full">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-full"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Get In Touch
             </Button>
           </div>

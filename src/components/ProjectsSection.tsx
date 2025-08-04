@@ -92,11 +92,11 @@ const ProjectsSection = () => {
                 >
                   <CardContent className="p-0">
                     {/* Project Image */}
-                    <div className="h-48 w-full relative overflow-hidden">
+                    <div className={`h-48 w-full relative overflow-hidden bg-gradient-to-br ${project.color}`}>
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover mix-blend-overlay"
                       />
                       {/* Overlay */}
                       <div className={`
