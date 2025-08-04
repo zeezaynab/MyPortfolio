@@ -1,20 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight, Heart, MessageCircle, Share } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import zainabImage from '@/assets/zainab-1.jpg';
-import workspaceImage from '@/assets/workspace-1.jpg';
-import projectImage from '@/assets/project-1.jpg';
-import readingImage from '@/assets/reading-corner.jpg';
-import brainstormImage from '@/assets/brainstorm.jpg';
-import successImage from '@/assets/success.jpg';
 
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [line1Text, setLine1Text] = useState('');
-  const [line2Text, setLine2Text] = useState('');
-  const [showCursor1, setShowCursor1] = useState(true);
-  const [showCursor2, setShowCursor2] = useState(false);
-  const [line1Complete, setLine1Complete] = useState(false);
   
   const images = [
     {
@@ -39,55 +28,6 @@ const HeroSection = () => {
     }
   ];
 
-  const line1 = "Hi there!";
-  const line2 = "I'm Zainab Tariq";
-
-  useEffect(() => {
-    // Type first line
-    let i = 0;
-    const typingInterval1 = setInterval(() => {
-      if (i < line1.length) {
-        setLine1Text(line1.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(typingInterval1);
-        setLine1Complete(true);
-        setShowCursor1(false);
-        
-        // Start typing second line after a brief pause
-        setTimeout(() => {
-          setShowCursor2(true);
-          let j = 0;
-          const typingInterval2 = setInterval(() => {
-            if (j < line2.length) {
-              setLine2Text(line2.slice(0, j + 1));
-              j++;
-            } else {
-              clearInterval(typingInterval2);
-            }
-          }, 100);
-        }, 500);
-      }
-    }, 100);
-
-    const cursorInterval1 = setInterval(() => {
-      if (!line1Complete) {
-        setShowCursor1(prev => !prev);
-      }
-    }, 500);
-
-    const cursorInterval2 = setInterval(() => {
-      if (line1Complete) {
-        setShowCursor2(prev => !prev);
-      }
-    }, 500);
-
-    return () => {
-      clearInterval(typingInterval1);
-      clearInterval(cursorInterval1);
-      clearInterval(cursorInterval2);
-    };
-  }, []);
 
   const nextImage = () => {
     setCurrentImage((prev) => (prev + 1) % images.length);
@@ -170,19 +110,12 @@ const HeroSection = () => {
         <div className="space-y-6 animate-fadeIn">
           <div className="space-y-4">
             <div className="text-4xl md:text-6xl font-bold text-foreground font-playfair">
-              <div className="flex items-center">
-                {line1Text}
-                <span className={`${showCursor1 ? 'opacity-100' : 'opacity-0'} transition-opacity ml-1`}>|</span>
-              </div>
-              <div className="flex items-center mt-2">
-                {line2Text}
-                <span className={`${showCursor2 ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
-              </div>
+              <div>Hi there!</div>
+              <div className="mt-2">I'm Zainab Tariq</div>
             </div>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-              I'm a passionate designer and creative problem-solver who loves crafting beautiful, 
-              user-centered experiences that make a difference. Let's create something amazing together!
+              Passionate about Digital forensics and ICS and OT Systems | cyber security content writing and research
             </p>
           </div>
           
