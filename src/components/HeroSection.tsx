@@ -17,12 +17,26 @@ const HeroSection = () => {
   const [line1Complete, setLine1Complete] = useState(false);
   
   const images = [
-    zainabImage,
-    workspaceImage,
-    projectImage,
-    readingImage,
-    brainstormImage,
-    successImage
+    {
+      src: "/lovable-uploads/ae10ea33-ef18-4d99-9904-ab86f424545e.png",
+      caption: "Hi there! I'm Zainab Tariq, a 5th semester Cybersecurity student passionate about digital security and technology."
+    },
+    {
+      src: "/lovable-uploads/bc3469b6-ba89-4cc6-a57a-866705048da7.png",
+      caption: "I'm an active member of IEEE where I've been teaching cybersecurity courses for over a year, covering fundamentals like network security, threat analysis, and security best practices."
+    },
+    {
+      src: "/lovable-uploads/89a767be-409f-4616-a6fb-67f3a76ee559.png",
+      caption: "I recently completed my internship at NECOP, working with the ICS department where I gained hands-on experience in Industrial Control Systems security and OT SOC development (NDAs have been signed so here's a goofy picture instead :D)"
+    },
+    {
+      src: "/lovable-uploads/19949cf4-9558-4401-95f5-6e2c3acf634e.png",
+      caption: "I'm passionate about cysec content writing and researching cybersecurity topics that matter. My current areas of interests are DFIR and ICS/OT systems."
+    },
+    {
+      src: "/lovable-uploads/cc642c89-23f1-45f8-a3e9-1d5d25f8b579.png",
+      caption: "This was a peek into my world, scroll below for all the professional jazz!"
+    }
   ];
 
   const line1 = "Hi there!";
@@ -84,7 +98,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
         
         {/* Instagram-style Post */}
@@ -92,15 +106,17 @@ const HeroSection = () => {
           <div className="bg-card rounded-3xl shadow-xl overflow-hidden max-w-sm w-full animate-fadeIn">
             {/* Post Header */}
             <div className="flex items-center gap-3 p-4 border-b border-border">
-              <div className="w-8 h-8 rounded-full bg-primary"></div>
-              <span className="font-medium text-foreground">zainab.designs</span>
+              <div className="w-8 h-8 rounded-full border-2 border-pink-400 bg-background flex items-center justify-center">
+                <span className="text-pink-400 font-bold text-sm">Z</span>
+              </div>
+              <span className="font-medium text-foreground">zainab_tariq</span>
             </div>
             
             {/* Image Carousel */}
             <div className="relative aspect-square overflow-hidden">
               <img 
-                src={images[currentImage]} 
-                alt={`Zainab's work ${currentImage + 1}`}
+                src={images[currentImage].src} 
+                alt={`Zainab's story ${currentImage + 1}`}
                 className="w-full h-full object-cover transition-transform duration-500"
               />
               
@@ -144,7 +160,7 @@ const HeroSection = () => {
                 <Share className="w-6 h-6 hover:text-primary cursor-pointer transition-colors" />
               </div>
               <div className="text-sm text-muted-foreground">
-                Bringing creative visions to life ✨
+                {images[currentImage].caption}
               </div>
             </div>
           </div>

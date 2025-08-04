@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Mail, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Mail, Github, Linkedin, Home, User, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
@@ -24,11 +24,10 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { label: 'About', id: 'about' },
-    { label: 'What I Offer', id: 'what-i-offer' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Certifications', id: 'certifications' },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Home', id: 'home', icon: Home },
+    { label: 'About', id: 'offers', icon: User },
+    { label: 'Projects', id: 'projects', icon: Briefcase },
+    { label: 'Contact', id: 'contact', icon: Mail },
   ];
 
   return (
@@ -40,25 +39,37 @@ const Navbar = () => {
       }
     `}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          
-          {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('about')}>
-            <span className="font-bold text-xl text-foreground">Zainab Tariq</span>
-          </div>
+        <div className="flex flex-col py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('home')}>
+              <span className="font-bold text-xl text-foreground">Zainab Tariq</span>
+            </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium relative group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-            ))}
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              {navItems.map((item) => {
+                const IconComponent = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium relative group flex items-center gap-2"
+                  >
+                    <IconComponent className="w-4 h-4" />
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Description */}
+          <div className="mt-2">
+            <p className="text-sm text-muted-foreground">
+              Passionate about Digital forensics and ICS and OT Systems | cyber security content writing and research
+            </p>
           </div>
 
           {/* Social Links & CTA */}
@@ -103,15 +114,19 @@ const Navbar = () => {
           ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
         `}>
           <div className="py-4 space-y-4 border-t border-border/50">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2"
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors duration-200 font-medium py-2 flex items-center gap-2"
+                >
+                  <IconComponent className="w-4 h-4" />
+                  {item.label}
+                </button>
+              );
+            })}
             
             <div className="flex items-center gap-4 pt-4 border-t border-border/50">
               <div className="flex items-center gap-2">

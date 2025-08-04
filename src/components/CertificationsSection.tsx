@@ -45,9 +45,13 @@ const CertificationsSection = () => {
     <section id="certifications" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
+          <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-4">
+            Professional Credentials
+          </div>
           <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 font-inter">
             My Certifications
           </h2>
+          <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Professional certifications that validate my cybersecurity expertise
           </p>

@@ -65,9 +65,13 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
+          <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-4">
+            Portfolio Showcase
+          </div>
           <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 font-inter">
             Featured Projects
           </h2>
+          <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A collection of work that showcases my passion for creating meaningful digital experiences
           </p>
@@ -80,7 +84,7 @@ const ProjectsSection = () => {
                 <Card
                   className={`
                     relative overflow-hidden rounded-3xl border-0 shadow-lg transition-all duration-300 cursor-pointer
-                    hover:shadow-xl hover:scale-105 animate-fadeIn bg-gradient-to-br ${project.color}
+                    hover:shadow-xl hover:scale-105 animate-fadeIn bg-gradient-to-br from-card via-card to-accent/5
                   `}
                   style={{ animationDelay: `${index * 0.1}s` }}
                   onMouseEnter={() => setHoveredProject(index)}

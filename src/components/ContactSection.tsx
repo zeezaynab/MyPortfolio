@@ -41,9 +41,13 @@ const ContactSection = () => {
     <section id="contact" className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
+          <div className="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-4">
+            Get In Touch
+          </div>
           <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-4 font-inter">
             Let's Connect
           </h2>
+          <div className="w-16 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Ready to start your next cybersecurity project? Let's discuss how we can work together!
           </p>
@@ -190,6 +194,13 @@ const ContactSection = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+        
+        {/* Footer */}
+        <div className="text-center mt-16 animate-fadeIn">
+          <p className="text-muted-foreground">
+            Convinced you to hire me or do we need a few chocolates here?
+          </p>
         </div>
       </div>
     </section>
