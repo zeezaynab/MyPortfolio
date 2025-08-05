@@ -17,6 +17,10 @@ const HeroSection = () => {
     {
       src: "/lovable-uploads/f139c941-940d-486b-a60a-dd87eab7e61a.png",
       caption: "I recently completed my internship at NECOP, working with the ICS department where I gained hands-on experience in Industrial Control Systems security and OT SOC development (NDAs have been signed so here's a goofy picture instead :D)"
+    },
+    {
+      src: "/lovable-uploads/e66a4a6b-6391-4e1e-8f41-bfd3ca32060f.png",
+      caption: "This was a peek into my world, scroll below for all the professional jazz!"
     }
   ];
 
@@ -31,10 +35,10 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 items-center md:items-stretch">
         
         {/* Instagram-style Post */}
-        <div className="flex justify-center">
+        <div className="flex justify-center md:flex-1">
           <div className="bg-card rounded-3xl shadow-xl overflow-hidden max-w-sm w-full animate-fadeIn">
             {/* Post Header */}
             <div className="flex items-center gap-3 p-4 border-b border-border">
@@ -99,40 +103,42 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="space-y-6 animate-fadeIn">
-          <div className="space-y-4">
-            <div className="text-4xl md:text-6xl font-bold text-foreground font-playfair">
-              <div>Hi there!</div>
-              <div className="mt-2">I'm Zainab Tariq</div>
+        <div className="md:flex-1 md:flex md:items-center md:justify-center">
+          <div className="space-y-6 animate-fadeIn">
+            <div className="space-y-4">
+              <div className="text-4xl md:text-6xl font-bold text-foreground font-playfair">
+                <div>Hi there!</div>
+                <div className="mt-2">I'm Zainab Tariq</div>
+              </div>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
+                Passionate about DFIR,Network Security and ICS/OT Security | Cybersecurity content writer and researcher
+              </p>
             </div>
             
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-              Passionate about DFIR,Network Security and ICS/OT Security | Cybersecurity content writer and researcher
-            </p>
-          </div>
-          
-          <div className="flex gap-4">
-            <Button 
-              size="lg" 
-              className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => {
-                const projectsSection = document.getElementById('projects');
-                projectsSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              View My Work
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="rounded-full"
-              onClick={() => {
-                const contactSection = document.getElementById('contact');
-                contactSection?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              Get In Touch
-            </Button>
+            <div className="flex gap-4">
+              <Button 
+                size="lg" 
+                className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                onClick={() => {
+                  const projectsSection = document.getElementById('projects');
+                  projectsSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                View My Work
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  contactSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Get In Touch
+              </Button>
+            </div>
           </div>
         </div>
       </div>
