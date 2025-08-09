@@ -8,19 +8,19 @@ const HeroSection = () => {
   const images = [
     {
       src: "/lovable-uploads/ae10ea33-ef18-4d99-9904-ab86f424545e.png",
-      caption: "Hi there! I'm Zainab Tariq, a 5th semester Cybersecurity student passionate about digital security and technology."
+      caption: "Hi there! I'm Zainab Tariq, a 5th semester Cybersecurity student with a love for digital security, ethical hacking, and new tech tools. I explore emerging threats, share insights with peers, and keep learning to grow in the ever-evolving security field."
     },
     {
       src: "/lovable-uploads/bc3469b6-ba89-4cc6-a57a-866705048da7.png",
-      caption: "I'm an active member of IEEE where I've been teaching cybersecurity courses for over a year, covering fundamentals like network security, threat analysis, and security best practices."
+      caption: "I'm an active member of IEEE, teaching cybersecurity courses for over a year. I cover network security, threat analysis, and best practices, while mentoring students and hosting hands-on workshops to spark curiosity in the tech and security community."
     },
     {
       src: "/lovable-uploads/f139c941-940d-486b-a60a-dd87eab7e61a.png",
-      caption: "I recently completed my internship at NECOP, working with the ICS department where I gained hands-on experience in Industrial Control Systems security and OT SOC development (NDAs have been signed so here's a goofy picture instead :D)"
+      caption: "I recently completed my internship at NECOP, working with the ICS department where I gained hands-on experience in Industrial Control Systems security and OT SOC development. NDAs are in place, so instead, here's a goofy photo that sums it all up."
     },
     {
       src: "/lovable-uploads/e66a4a6b-6391-4e1e-8f41-bfd3ca32060f.png",
-      caption: "This was a peek into my world, scroll below for all the professional jazz!"
+      caption: "This was a peek into my world — scroll below for the professional details, from my cybersecurity journey to my projects and achievements. These experiences have shaped my path as a learner, mentor, and aspiring professional in the security field."
     }
   ];
 
