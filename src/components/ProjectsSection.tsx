@@ -16,9 +16,9 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Zarker",
-      description: "Advanced threat detection system with real-time monitoring capabilities and automated response mechanisms.",
+      description: "AI-powered PCAP analysis with anomaly detection and data decoding.",
       image: "/lovable-uploads/workspace-1.jpg",
-      tech: ["Python", "Machine Learning", "Network Analysis"],
+      tech: ["AI", "Python", "Docker", "FastAPI", "Streamlit"],
       color: "from-primary/20 to-accent/20",
       github: "https://github.com/zeezaynab/zarker",
       live: "#"
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
       title: "Omnilog",
       description: "Comprehensive log analysis platform for security incident detection and forensic investigation.",
       image: "/lovable-uploads/project-1.jpg",
-      tech: ["Java", "ElasticSearch", "Docker"],
+      tech: ["Java SceneBuilder", "OpenIP.io", "Web Scraping", "Whois"],
       color: "from-warm/20 to-cozy/20",
       github: "https://github.com/zeezaynab/omnilog",
       live: "#"
@@ -36,7 +36,7 @@ const ProjectsSection = () => {
       title: "Phoolbazar",
       description: "E-commerce security framework with advanced fraud detection and secure payment processing.",
       image: "/lovable-uploads/brainstorm.jpg",
-      tech: ["React", "Node.js", "Cybersecurity"],
+      tech: ["Flask", "MongoDB", "API Integrations", "MySQL"],
       color: "from-chai/20 to-secondary/20",
       github: "https://github.com/zeezaynab/phoolBazar",
       live: "#"
@@ -45,19 +45,19 @@ const ProjectsSection = () => {
       title: "Momo",
       description: "Mobile security application for threat assessment and vulnerability scanning on Android devices.",
       image: "/lovable-uploads/reading-corner.jpg",
-      tech: ["Android", "Kotlin", "Security APIs"],
+      tech: ["Java SceneBuilder", "JNA Libraries", "Low-level Systems"],
       color: "from-accent/20 to-warm/20",
       github: "https://github.com/zeezaynab/momo",
       live: "#"
     },
     {
-      title: "SOC Development for OT Systems",
+      title: "OT SOC Development",
       description: "Security Operations Center implementation for Operational Technology environments with specialized monitoring.",
       image: "/lovable-uploads/success.jpg",
       tech: ["Python", "SIEM", "OT Protocols"],
       color: "from-cozy/20 to-primary/20",
       github: "#",
-      live: "#"
+      live: "https://medium.com/@zainabtariq18.zt"
     }
   ];
 
