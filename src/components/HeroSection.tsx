@@ -34,11 +34,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 py-20">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row gap-12 items-center md:items-stretch">
+    <section id="home" className="min-h-screen px-6 py-20">
+      <div className="max-w-6xl w-full mx-auto h-full flex flex-col md:flex-row gap-12">
         
         {/* Instagram-style Post */}
-        <div className="flex justify-center md:flex-1">
+        <div className="flex justify-center items-start md:flex-1 md:min-h-screen md:items-center">
           <div className="bg-card rounded-3xl shadow-xl overflow-hidden max-w-sm w-full animate-fadeIn">
             {/* Post Header */}
             <div className="flex items-center gap-3 p-4 border-b border-border">
@@ -103,7 +103,7 @@ const HeroSection = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="md:flex-1 md:flex md:items-center md:justify-center">
+        <div className="flex items-center justify-center md:flex-1 md:min-h-screen">
           <div className="space-y-6 animate-fadeIn">
             <div className="space-y-4">
               <div className="text-4xl md:text-6xl font-bold text-foreground font-playfair">
