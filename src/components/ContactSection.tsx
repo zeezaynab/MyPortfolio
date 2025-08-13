@@ -22,8 +22,8 @@ const ContactSection = () => {
               rel="noopener noreferrer" 
               className="group text-center animate-fadeIn hover:scale-105 transition-transform duration-300"
             >
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[hsl(200,88%,47%)] flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
-                <Linkedin className="w-8 h-8 text-white" />
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
+                <Linkedin className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-medium text-foreground">LinkedIn</h4>
             </a>
@@ -34,8 +34,8 @@ const ContactSection = () => {
               className="group text-center animate-fadeIn hover:scale-105 transition-transform duration-300"
               style={{ animationDelay: '0.1s' }}
             >
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[hsl(0,72%,56%)] flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
-                <Mail className="w-8 h-8 text-white" />
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
+                <Mail className="w-8 h-8 text-accent" />
               </div>
               <h4 className="font-medium text-foreground">Email</h4>
             </a>
@@ -48,8 +48,8 @@ const ContactSection = () => {
               className="group text-center animate-fadeIn hover:scale-105 transition-transform duration-300"
               style={{ animationDelay: '0.2s' }}
             >
-              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-[hsl(0,0%,20%)] flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
-                <Github className="w-8 h-8 text-white" />
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
+                <Github className="w-8 h-8 text-primary" />
               </div>
               <h4 className="font-medium text-foreground">GitHub</h4>
             </a>
