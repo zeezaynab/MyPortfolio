@@ -96,17 +96,6 @@ const CertificationsSection = () => {
                       {cert.description}
                     </p>
                   </div>
-
-                  {/* View Certificate Button */}
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full rounded-xl mt-4"
-                    disabled
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Certificate
-                  </Button>
                 </CardContent>
               </Card>
             );
