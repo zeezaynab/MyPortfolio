@@ -7,7 +7,7 @@ const CertificationsSection = () => {
     {
       title: "Introduction to CIP",
       issuer: "OPSWAT",
-      year: "2024",
+      year: "2025",
       description: "Critical Infrastructure Protection fundamentals",
       icon: Award
     },
@@ -28,15 +28,22 @@ const CertificationsSection = () => {
     {
       title: "CCNA Introduction to Networks",
       issuer: "Cisco",
-      year: "2024",
+      year: "2025",
       description: "Network fundamentals and protocols",
       icon: Award
     },
     {
-      title: "CC by ISC2",
-      issuer: "ISC2",
-      year: "2024",
-      description: "Cybersecurity foundations and principles",
+      title: "Advanced Endpoint Investigations",
+      issuer: "TryHackMe",
+      year: "2025",
+      description: "Advanced endpoint security and investigation techniques",
+      icon: Award
+    },
+    {
+      title: "Pre Security",
+      issuer: "TryHackMe",
+      year: "2025",
+      description: "Cybersecurity fundamentals and foundational concepts",
       icon: Award
     }
   ];
