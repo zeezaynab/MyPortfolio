@@ -40,10 +40,10 @@ const CertificationsSection = () => {
       icon: Award
     },
     {
-      title: "Pre Security",
-      issuer: "TryHackMe",
-      year: "2025",
-      description: "Cybersecurity fundamentals and foundational concepts",
+      title: "CC",
+      issuer: "ISC2",
+      year: "2024",
+      description: "Certified in Cybersecurity foundational certification",
       icon: Award
     }
   ];
