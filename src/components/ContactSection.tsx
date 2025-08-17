@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Shield } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -13,7 +13,7 @@ const ContactSection = () => {
 
         {/* Contact Methods - Centered Grid */}
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl">
             
             {/* LinkedIn */}
             <a 
@@ -53,6 +53,21 @@ const ContactSection = () => {
               </div>
               <h4 className="font-medium text-foreground">GitHub</h4>
             </a>
+            
+            {/* TryHackMe */}
+            <a 
+              href="https://tryhackme.com/p/zeezaynab" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group text-center animate-fadeIn hover:scale-105 transition-transform duration-300"
+              style={{ animationDelay: '0.3s' }}
+            >
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent/20 flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
+                <Shield className="w-8 h-8 text-accent" />
+              </div>
+              <h4 className="font-medium text-foreground">TryHackMe</h4>
+            </a>
+            
             
           </div>
         </div>
