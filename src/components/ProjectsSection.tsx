@@ -17,45 +17,40 @@ const ProjectsSection = () => {
     {
       title: "Zarker",
       description: "AI-powered PCAP analysis with anomaly detection and data decoding.",
-      image: "/lovable-uploads/workspace-1.jpg",
       tech: ["AI", "Python", "Docker", "FastAPI", "Streamlit"],
-      color: "from-primary/20 to-accent/20",
+      color: "from-primary/30 to-accent/30",
       github: "https://github.com/zeezaynab/zarker",
       live: "#"
     },
     {
       title: "Omnilog",
       description: "Comprehensive log analysis platform for security incident detection and forensic investigation.",
-      image: "/lovable-uploads/project-1.jpg",
       tech: ["Java SceneBuilder", "OpenIP.io", "Web Scraping", "Whois"],
-      color: "from-warm/20 to-cozy/20",
+      color: "from-accent/30 to-primary/30",
       github: "https://github.com/zeezaynab/omnilog",
       live: "#"
     },
     {
       title: "Phoolbazar",
       description: "E-commerce security framework with advanced fraud detection and secure payment processing.",
-      image: "/lovable-uploads/brainstorm.jpg",
       tech: ["Flask", "MongoDB", "API Integrations", "MySQL"],
-      color: "from-chai/20 to-secondary/20",
+      color: "from-primary/25 to-muted/30",
       github: "https://github.com/zeezaynab/phoolBazar",
       live: "#"
     },
     {
       title: "Momo",
       description: "Mobile security application for threat assessment and vulnerability scanning on Android devices.",
-      image: "/lovable-uploads/reading-corner.jpg",
       tech: ["Java SceneBuilder", "JNA Libraries", "Low-level Systems"],
-      color: "from-accent/20 to-warm/20",
+      color: "from-accent/25 to-muted/25",
       github: "https://github.com/zeezaynab/momo",
       live: "#"
     },
     {
       title: "OT SOC Development",
       description: "Security Operations Center implementation for Operational Technology environments with specialized monitoring.",
-      image: "/lovable-uploads/success.jpg",
       tech: ["Python", "SIEM", "OT Protocols"],
-      color: "from-cozy/20 to-primary/20",
+      color: "from-muted/30 to-accent/25",
       github: "#",
       live: "https://medium.com/@zainabtariq18.zt"
     }
@@ -91,13 +86,14 @@ const ProjectsSection = () => {
                   onMouseLeave={() => setHoveredProject(null)}
                 >
                   <CardContent className="p-0">
-                    {/* Project Image */}
+                    {/* Project Background */}
                     <div className={`h-48 w-full relative overflow-hidden bg-gradient-to-br ${project.color}`}>
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="w-full h-full object-cover mix-blend-overlay"
-                      />
+                      {/* Decorative pattern overlay */}
+                      <div className="absolute inset-0 opacity-10">
+                        <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/20"></div>
+                        <div className="absolute bottom-6 left-6 w-8 h-8 rounded-full bg-white/15"></div>
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white/5"></div>
+                      </div>
                       {/* Overlay */}
                       <div className={`
                         absolute inset-0 bg-black/20 transition-all duration-300
